@@ -1,0 +1,25 @@
+Cron Job Scheduler 
+
+A scheduler that works on running specific tasks at certain frequencies 
+
+Assumptions: 
+1- The frequency types that could be provided for different jobs are assumed to fall in; Seconds, Minutes, Hours and Days, for bigger intervals a conversion is to be done before passing the input
+2- Once the scheduler program is called the user cannot introduce new job types, to do that we would need to pause and rerun with the new input
+
+How to run the scheduler 
+in order to start the program the user would need to provide input in our main class in the form 
+"Scheduler.schedule(1, 1, 10, FrequencyType.SECONDS, func);"
+where the first parameter is the job id,
+second is the amount of time to be taken by one job to be completed, 
+third is the amount of frequency type (every 10 seconds for example) 
+and fourth is the frequency type (Second, Minute, Hour, Day) 
+
+
+
+Enhancements: 
+1- Allowing the introduction of new input while the scheduler is running where we would notify the main thread whenever we read an input from the user to accommodate for it in our priority queue 
+2- Adding assertions for the time periods in unit testing by; either writing logs in external files and tracking the intervals for each id for a specific time 
+or by adding the times of execution to an array and performing assertions on that
+3- directly read input from user 
+4- adding the functionality of removing a job from being run by the scheduler or modifying the frequency 
+
